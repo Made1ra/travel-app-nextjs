@@ -28,11 +28,10 @@ export default function Modal({
     .toISOString()
     .split("T")[0];
 
-  const [token, setToken] = useState<string | null>(null);
   const [date, setDate] = useState(minDate);
   const [guests, setGuests] = useState(1);
 
-  const { tripId } = useParams();
+  const { id } = useParams();
 
   const handleChangeDate = (event: ChangeEvent<HTMLInputElement>) => {
     setDate(event.target.value);
@@ -50,15 +49,13 @@ export default function Modal({
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (typeof window !== "undefined") {
-      setToken(localStorage.getItem("token"));
-    }
-
-    if (token && tripId) {
+    if (id) {
       try {
         await postBookings(
-          token,
-          typeof tripId === "string" ? tripId : tripId[0],
+          typeof window !== "undefined"
+            ? localStorage.getItem("token") || ""
+            : "",
+          typeof id === "string" ? id : id[0],
           guests,
           date
         );

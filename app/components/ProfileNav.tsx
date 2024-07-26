@@ -63,7 +63,7 @@ export default function ProfileNav() {
             >
               <span className="visually-hidden">Bookings</span>
               <Image
-                src="./briefcase.svg"
+                src="/briefcase.svg"
                 alt="bookings"
                 width={24}
                 height={24}
@@ -77,7 +77,7 @@ export default function ProfileNav() {
               tabIndex={0}
             >
               <span className="visually-hidden">Profile</span>
-              <Image src="./user.svg" alt="profile" width={24} height={24} />
+              <Image src="/user.svg" alt="profile" width={24} height={24} />
               <ul
                 data-test-id="header-profile-nav-list"
                 className="profile-nav__list"

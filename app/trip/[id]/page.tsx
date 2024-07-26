@@ -68,17 +68,16 @@ export default function TripPage() {
         <h1 className="visually-hidden">Travel App</h1>
         {isLoaded ? (
           <div className="trip">
-            <div className="relative w-full">
-              <Image
-                src={trip?.image || ""}
-                alt="trip photo"
-                className="trip__img"
-                data-test-id="trip-details-image"
-                sizes="100%"
-                width={320}
-                height={190}
-              />
-            </div>
+            <Image
+              src={trip?.image || ""}
+              alt="trip photo"
+              className="trip__img"
+              data-test-id="trip-details-image"
+              sizes="100%"
+              width={400}
+              height={400}
+              priority
+            />
             <div className="trip__content">
               <TripInfo
                 title={trip?.title || ""}

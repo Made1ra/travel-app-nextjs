@@ -15,7 +15,7 @@ export default function Footer() {
         with
         <Image
           className="footer__icon"
-          src="./heart.svg"
+          src="/heart.svg"
           alt="heart"
           width={21}
           height={16}
