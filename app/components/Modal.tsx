@@ -3,7 +3,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { useParams } from "next/navigation";
 import { postBookings } from "@/app/lib/actions";
-import TripInfo from "@/app/components/TripInfo";
+import TripInfo from "@/app/components/trip-info";
 
 export default function Modal({
   open,

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import TripInfo from "@/app/components/TripInfo";
-import TripPrice from "@/app/components/TripPrice";
+import TripInfo from "@/app/components/trip-info";
+import TripPrice from "@/app/components/trip-price";
 
 export default function TripCard({
   id,

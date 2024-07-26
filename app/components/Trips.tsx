@@ -1,5 +1,5 @@
 import { Trip } from "@/app/lib/definitions";
-import TripCard from "@/app/components/TripCard";
+import TripCard from "@/app/components/trip-card";
 
 export default function Trips({ trips }: { trips: Trip[] }) {
   return (

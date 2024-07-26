@@ -4,11 +4,11 @@ import { useState, useEffect, ChangeEvent } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Trip } from "@/app/lib/definitions";
 import { getTrips } from "@/app/lib/actions";
-import Header from "@/app/components/Header";
-import TripsFilter from "@/app/components/TripsFilter";
-import Trips from "@/app/components/Trips";
-import Footer from "@/app/components/Footer";
-import Loader from "@/app/components/Loader";
+import Header from "@/app/components/header";
+import TripsFilter from "@/app/components/trips-filter";
+import Trips from "@/app/components/trips";
+import Footer from "@/app/components/footer";
+import Loader from "@/app/components/loader";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {

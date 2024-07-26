@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
 import { signUp } from "@/app/lib/actions";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
+import Header from "@/app/components/header";
+import Footer from "@/app/components/footer";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function SignUp() {

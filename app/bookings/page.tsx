@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Booking } from "@/app/lib/definitions";
 import { getBookings, deleteBooking } from "@/app/lib/actions";
-import Header from "@/app/components/Header";
-import BookingCard from "@/app/components/BookingCard";
-import Footer from "@/app/components/Footer";
-import Loader from "@/app/components/Loader";
+import Header from "@/app/components/header";
+import BookingCard from "@/app/components/booking-card";
+import Footer from "@/app/components/footer";
+import Loader from "@/app/components/loader";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Bookings() {

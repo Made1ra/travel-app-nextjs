@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Playfair_Display } from "next/font/google";
-import ProfileNav from "@/app/components/ProfileNav";
+import ProfileNav from "@/app/components/profile-nav";
 
 const playfairDisplay = Playfair_Display({ subsets: ["latin"] });
 

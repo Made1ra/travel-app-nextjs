@@ -6,12 +6,12 @@ import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
 import { Trip } from "@/app/lib/definitions";
 import { getTrip } from "@/app/lib/actions";
-import Header from "@/app/components/Header";
-import TripInfo from "@/app/components/TripInfo";
-import TripPrice from "@/app/components/TripPrice";
-import Footer from "@/app/components/Footer";
-import Loader from "@/app/components/Loader";
-import Modal from "@/app/components/Modal";
+import Header from "@/app/components/header";
+import TripInfo from "@/app/components/trip-info";
+import TripPrice from "@/app/components/trip-price";
+import Footer from "@/app/components/footer";
+import Loader from "@/app/components/loader";
+import Modal from "@/app/components/modal";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function TripPage() {
