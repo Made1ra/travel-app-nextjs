@@ -20,7 +20,7 @@ export default function Header() {
         >
           Travel App
         </Link>
-        {pathname !== "/sign-in" && pathname !== "/sign-out" && <ProfileNav />}
+        {pathname !== "/sign-in" && pathname !== "/sign-up" && <ProfileNav />}
       </div>
     </header>
   );

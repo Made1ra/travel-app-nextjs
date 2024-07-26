@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useLayoutEffect, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
@@ -15,7 +15,6 @@ import Modal from "@/app/components/Modal";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function TripPage() {
-  const [token, setToken] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [trip, setTrip] = useState<Trip | null>(null);
@@ -40,18 +39,14 @@ export default function TripPage() {
     setOpen(false);
   };
 
-  useLayoutEffect(() => {
-    if (typeof window !== "undefined") {
-      setToken(localStorage.getItem("token"));
-    }
-  }, []);
-
   useEffect(() => {
     const fetchTrip = async () => {
-      if (token && id) {
+      if (id) {
         try {
           const trip = await getTrip(
-            token,
+            typeof window !== "undefined"
+              ? localStorage.getItem("token") || ""
+              : "",
             typeof id === "string" ? id : id[0]
           );
           setTrip(trip);
@@ -64,7 +59,7 @@ export default function TripPage() {
     };
 
     fetchTrip();
-  }, [token, id]);
+  }, [id]);
 
   return (
     <div className="flex flex-col grow min-h-screen">

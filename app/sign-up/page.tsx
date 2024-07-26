@@ -25,12 +25,17 @@ export default function SignUp() {
     const password = (form.elements.namedItem("password") as HTMLInputElement)
       .value;
     try {
-      const { token } = await signUp(fullName, email, password);
-      if (typeof window !== "undefined") {
-        localStorage.setItem("token", token);
+      const { token, error, message } = await signUp(fullName, email, password);
+      if (error) {
+        throw new Error(message);
       }
 
-      router.push("/");
+      if (typeof window !== "undefined") {
+        if (token) {
+          localStorage.setItem("token", token);
+          router.push("/");
+        }
+      }
     } catch (error) {
       notifyError(`${error}`);
     }
