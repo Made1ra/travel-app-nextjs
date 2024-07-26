@@ -35,7 +35,7 @@ export default function SignIn() {
   };
 
   return (
-    <>
+    <div className="flex flex-col grow min-h-screen">
       <Header />
       <main className="sign-in-page">
         <h1 className="visually-hidden">Travel App</h1>
@@ -86,6 +86,6 @@ export default function SignIn() {
         className="notification"
         containerId="sign-in-notification"
       />
-    </>
+    </div>
   );
 }

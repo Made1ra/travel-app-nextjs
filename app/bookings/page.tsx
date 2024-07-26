@@ -61,7 +61,7 @@ export default function Bookings() {
   }, [token]);
 
   return (
-    <>
+    <div className="flex flex-col grow min-h-screen">
       <Header />
       <main className="bookings-page">
         <h1 className="visually-hidden">Travel App</h1>
@@ -92,6 +92,6 @@ export default function Bookings() {
         className="notification"
         containerId="bookings-notification"
       />
-    </>
+    </div>
   );
 }

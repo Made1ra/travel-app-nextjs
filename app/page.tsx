@@ -91,7 +91,7 @@ export default function Home() {
   }, [duration, level, title, trips]);
 
   return (
-    <>
+    <div className="flex flex-col grow min-h-screen">
       <Header />
       <main>
         <h1 className="visually-hidden">Travel App</h1>
@@ -110,6 +110,6 @@ export default function Home() {
         className="notification"
         containerId="trips-notification"
       />
-    </>
+    </div>
   );
 }

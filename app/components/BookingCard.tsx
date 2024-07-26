@@ -1,4 +1,7 @@
+import { Playfair_Display } from "next/font/google";
 import { formatDate } from "@/app/lib/utils";
+
+const playfairDisplay = Playfair_Display({ subsets: ["latin"] });
 
 export default function BookingCard({
   title,
@@ -15,7 +18,10 @@ export default function BookingCard({
 }) {
   return (
     <li data-test-id="booking" className="booking">
-      <h3 data-test-id="booking-title" className="booking__title">
+      <h3
+        data-test-id="booking-title"
+        className={`booking__title ${playfairDisplay.className}`}
+      >
         {title}
       </h3>
       <span data-test-id="booking-guests">{guests} guests</span>

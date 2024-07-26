@@ -56,7 +56,6 @@ body {
   overflow-x: hidden;
   color: var(--color-blue-400);
   font-size: var(--font-size-200);
-  font-family: Assistant, sans-serif;
   font-style: normal;
   line-height: 1.5;
   text-rendering: optimizespeed;
@@ -196,7 +195,6 @@ select {
   margin: 0 0 5px;
   font-weight: 600;
   font-size: var(--font-size-400);
-  font-family: "Playfair Display", serif;
 }
 
 .trip-info__content {
@@ -245,7 +243,6 @@ select {
   color: var(--color-blue-400);
   font-weight: 600;
   font-size: var(--font-size-500);
-  font-family: "Playfair Display", serif;
   text-decoration: none;
 }
 
@@ -318,9 +315,6 @@ select {
   color: var(--color-white);
   text-align: center;
   background-color: var(--color-blue-400);
-  position: absolute;
-  width: 100%;
-  bottom: 0;
 }
 
 .footer__text {
@@ -555,7 +549,6 @@ select {
   margin: 0;
   font-weight: 600;
   font-size: var(--font-size-400);
-  font-family: "Playfair Display", serif;
   line-height: 1;
 }
 

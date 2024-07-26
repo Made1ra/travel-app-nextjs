@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
@@ -20,7 +20,7 @@ export default function TripPage() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [trip, setTrip] = useState<Trip | null>(null);
 
-  const { tripId } = useParams();
+  const { id } = useParams();
 
   const notifySuccess = () => {
     toast.success("The trip has been successfully booked!", {
@@ -40,7 +40,7 @@ export default function TripPage() {
     setOpen(false);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (typeof window !== "undefined") {
       setToken(localStorage.getItem("token"));
     }
@@ -48,11 +48,11 @@ export default function TripPage() {
 
   useEffect(() => {
     const fetchTrip = async () => {
-      if (token && tripId) {
+      if (token && id) {
         try {
           const trip = await getTrip(
             token,
-            typeof tripId === "string" ? tripId : tripId[0]
+            typeof id === "string" ? id : id[0]
           );
           setTrip(trip);
         } catch (error) {
@@ -64,21 +64,26 @@ export default function TripPage() {
     };
 
     fetchTrip();
-  }, [token, tripId]);
+  }, [token, id]);
 
   return (
-    <>
+    <div className="flex flex-col grow min-h-screen">
       <Header />
       <main className="trip-page">
         <h1 className="visually-hidden">Travel App</h1>
         {isLoaded ? (
           <div className="trip">
-            <Image
-              src={trip?.image || ""}
-              alt="trip photo"
-              className="trip__img"
-              data-test-id="trip-details-image"
-            />
+            <div className="relative w-full">
+              <Image
+                src={trip?.image || ""}
+                alt="trip photo"
+                className="trip__img"
+                data-test-id="trip-details-image"
+                sizes="100%"
+                width={320}
+                height={190}
+              />
+            </div>
             <div className="trip__content">
               <TripInfo
                 title={trip?.title || ""}
@@ -120,6 +125,6 @@ export default function TripPage() {
         notifyError={notifyError}
         onClose={handleClose}
       />
-    </>
+    </div>
   );
 }

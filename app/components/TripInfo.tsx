@@ -1,3 +1,7 @@
+import { Playfair_Display } from "next/font/google";
+
+const playfairDisplay = Playfair_Display({ subsets: ["latin"] });
+
 export default function TripInfo({
   title,
   duration,
@@ -9,7 +13,10 @@ export default function TripInfo({
 }) {
   return (
     <div className="trip-info">
-      <h3 data-test-id="trip-card-title" className="trip-info__title">
+      <h3
+        data-test-id="trip-card-title"
+        className={`trip-info__title ${playfairDisplay.className}`}
+      >
         {title}
       </h3>
       <div className="trip-info__content">
