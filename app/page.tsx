@@ -105,13 +105,7 @@ export default function Home() {
           handleChangeDuration={handleChangeDuration}
           handleChangeLevel={handleChangeLevel}
         />
-        {isLoaded ? (
-          <Trips trips={filteredTrips} />
-        ) : (
-          <div className="my-auto">
-            <Loader />
-          </div>
-        )}
+        {isLoaded ? <Trips trips={filteredTrips} /> : <Loader />}
       </main>
       <Footer />
       <ToastContainer
