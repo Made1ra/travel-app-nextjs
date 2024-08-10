@@ -41,6 +41,10 @@ export default function ProfileNav() {
       if (token) {
         try {
           const user = await getAuthenticatedUser(token);
+          if (!user) {
+            router.push("/sign-in");
+          }
+
           setUser(user);
         } catch (error) {
           notifyError(`${error}`);
@@ -49,7 +53,7 @@ export default function ProfileNav() {
     };
 
     fetchUser();
-  }, [token]);
+  }, [router, token]);
 
   return (
     <>
