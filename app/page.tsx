@@ -61,30 +61,32 @@ export default function Home() {
 
   useEffect(() => {
     const filterTrips = () => {
-      setFilteredTrips(
-        trips.filter((trip) => {
-          const matchesTitle =
-            trip.title.toLowerCase().search(title.toLowerCase()) !== -1;
-          const matchesLevel = level ? trip.level === level : true;
-          const matchesDuration = (() => {
-            if (duration === "0_x_5") {
-              return trip.duration <= 5;
-            }
+      if (trips && trips.length > 1) {
+        setFilteredTrips(
+          trips.filter((trip) => {
+            const matchesTitle =
+              trip.title.toLowerCase().search(title.toLowerCase()) !== -1;
+            const matchesLevel = level ? trip.level === level : true;
+            const matchesDuration = (() => {
+              if (duration === "0_x_5") {
+                return trip.duration <= 5;
+              }
 
-            if (duration === "5_x_10") {
-              return trip.duration > 5 && trip.duration <= 10;
-            }
+              if (duration === "5_x_10") {
+                return trip.duration > 5 && trip.duration <= 10;
+              }
 
-            if (duration === "10") {
-              return trip.duration > 10;
-            }
+              if (duration === "10") {
+                return trip.duration > 10;
+              }
 
-            return true;
-          })();
+              return true;
+            })();
 
-          return matchesTitle && matchesLevel && matchesDuration;
-        })
-      );
+            return matchesTitle && matchesLevel && matchesDuration;
+          })
+        );
+      }
     };
 
     filterTrips();
